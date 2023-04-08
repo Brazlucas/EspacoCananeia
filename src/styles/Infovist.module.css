@@ -1,0 +1,33 @@
+.action {
+  font-family: IBM Plex Sans;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #fff;
+  background: #E0B246;
+}
+
+.outline {
+  background: #fff;
+  color: #E0B246;
+}
+
+.section-title {
+  font-family: Poppins;
+  color: #3C3B3B;
+  line-height: 150%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+  color: #3C3B3B;
+}
+
+.text-center {
+  text-align: center;
+}
