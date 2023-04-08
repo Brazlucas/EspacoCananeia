@@ -29,15 +29,15 @@ export default function Benefits() {
             <img style={{ width: '50%', height: '20px' }} src="images/line.png" alt="" />
           </DivisorWrapper>
           <Description>
-            A Dieters Lago tem como diferencial uma estrutura completa para todos os tipos de evento, sendo casamentos, aniversários,
-            confraternizações e eventos corporativos. Em uma das mais belas paisagens da região, nosso local possui espaço para cerimônia de
-            front ao lago, dois ambientes para convidados, estacionamento, espaço para shows, pier para embarcação e muito mais para você a
-            realizar seu evento cercado de belezas naturais com toda tranquilidade, privacidade em uma estrutura única, rústica e sofisticada.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia obcaecati suscipit quam. Et ipsam excepturi 
+            non, explicabo, quia eligendi reiciendis repudiandae commodi sint quos vero omnis placeat. Lorem ipsum dolor sit amet consectetur, 
+            adipisicing elit. Architecto at, placeat officia obcaecati suscipit quam. Et ipsam excepturi 
+            non, explicabo, quia eligendi reiciendis repudiandae commodi sint quos vero omnis placeat.
           </Description>
           <Wrapper>
             <ImageList sx={{ width: '100%', height: '100%' }} cols={3}>
               {items.map((item) => (
-                <ImageListItem style={{ margin: '8px', border: 'solid 1px #EDBC40' }} key={item.img}>
+                <ImageListItem style={{ margin: '8px', marginBottom: '15px', border: 'solid 1px #EDBC40' }} key={item.img}>
                   <img
                     style={{ maxHeight: '350px', maxWidth: '100%'}}
                     src={`${item.img}?w=164&h=164&fit=crop&auto=format`}

@@ -54,7 +54,7 @@ export const Info = styled.div`
   position: relative;
   gap: 8%;
   margin: 0 auto;
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: row;
 

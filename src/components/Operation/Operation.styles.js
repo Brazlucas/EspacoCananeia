@@ -45,7 +45,7 @@ export const SectionWrapper = styled.div`
   text-align: center;
   width: 100%;
   @media screen and (max-width: 767px) {
-    padding: 50px !important;
+    padding: 30px !important;
     max-width: 100vw;
     padding: 0 15px;
     font-size: 16px;
@@ -140,7 +140,16 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 1700px) {
+    max-width: 100%;
+    font-size: 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
   @media screen and (max-width: 767px) {
+    max-width: 100%;
     font-size: 16px;
     margin: 0;
     display: flex;

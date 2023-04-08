@@ -6,7 +6,6 @@ import { useRef, useState, useEffect } from 'react';
 
 export default function ModalCarousel() {
   const items = itemData();
-
   const [showFullscreenButton, setShowFullscreenButton] = useState(false);
   const imageGalleryRef = useRef(null);
 
@@ -46,6 +45,7 @@ export default function ModalCarousel() {
           slideDuration={800}
           slideInterval={5000}
           items={items}
+          thumbnailPosition='left'
         />
       </div>
     </>
