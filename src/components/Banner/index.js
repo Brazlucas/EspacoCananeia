@@ -16,14 +16,32 @@ import { IoLocationSharp } from 'react-icons/io5'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, FreeMode } from "swiper";
 import 'swiper/css';
+import FadeIn from 'react-fade-in';
+import { useState, useEffect } from "react";
+import { useRef } from "react";
 
 SwiperCore.use([Autoplay, FreeMode]);
 
 export default function Banner() {
+  const [visible, setVisible] = useState(false);
+  const bannerRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (bannerRef.current) {
+        const top = bannerRef.current.getBoundingClientRect().top;
+        const isVisible = (top + 100) < window.innerHeight;
+        setVisible(isVisible);
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
       <Container>
-        <Content src="" alt="Banner Infovist">
+        <Content>
           <DescriptionWrapper>
             <Title>O melhor espaço<br />de Guarulhos!</Title>
             <Blink>
@@ -33,61 +51,65 @@ export default function Banner() {
         </Content>
         <Address>
           <AddressSpan><IoLocationSharp style={{ marginRight: '5px' }} />Rua Cananéia, Nº 51 - Guarulhos (SP)</AddressSpan>
-        </Address>
-        <InfoWrapper>
-          <Info>
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={3}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
-              freeMode={true}
-              pagination={false}
-              autoplay={{
-                pauseOnMouseEnter: false,
-                loop: true,
-                delay: 3000,
-                disableOnInteraction: false,
-                freeMode: true,
-              }}
-            >
-              <SwiperSlide>
-                <InfoText>
-                  <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon3.png"></img>
-                  <h4>Localização Privilegiada</h4>
-                  <span>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia obcaecat
-                  </span>
-                </InfoText>
-              </SwiperSlide>
-              <SwiperSlide>
-                <InfoText>
-                  <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon1.png"></img>
-                  <h4 style={{ marginBottom: '8px' }}>Decoração Elegante</h4>
-                  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat</span>
-                </InfoText>
-              </SwiperSlide>
-              <SwiperSlide>
-                <InfoText>
-                  <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon2.png"></img>
-                  <h4 style={{ marginBottom: '8px' }}>Gastronomia Sofisticada</h4>
-                  <span>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia.
-                  </span>
-                </InfoText>
-              </SwiperSlide>
-              <SwiperSlide>
-                <InfoText>
-                  <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon2.png"></img>
-                  <h4 style={{ marginBottom: '8px' }}>Gastronomia Sofisticada</h4>
-                  <span>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia.
-                  </span>
-                </InfoText>
-              </SwiperSlide>
-            </Swiper>
-          </Info>
-        </InfoWrapper>
+        </Address> 
+          <div ref={bannerRef}>
+            {visible &&
+            <FadeIn delay={100}>
+              <InfoWrapper>
+                <Info>
+                  <Swiper
+                    spaceBetween={50}
+                    slidesPerView={3}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}
+                    freeMode={true}
+                    loopMode={true}
+                    autoplay={{
+                      pauseOnMouseEnter: false,
+                      delay: 1800,
+                      disableOnInteraction: false,
+                    }}
+                  >
+                    <SwiperSlide>
+                      <InfoText>
+                        <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon3.png"></img>
+                        <h4>Localização Privilegiada</h4>
+                        <span>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia obcaecat
+                        </span>
+                      </InfoText>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <InfoText>
+                        <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon1.png"></img>
+                        <h4 style={{ marginBottom: '8px' }}>Decoração Elegante</h4>
+                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat</span>
+                      </InfoText>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <InfoText>
+                        <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon2.png"></img>
+                        <h4 style={{ marginBottom: '8px' }}>Gastronomia Sofisticada</h4>
+                        <span>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia.
+                        </span>
+                      </InfoText>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <InfoText>
+                        <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon4.png"></img>
+                        <h4 style={{ marginBottom: '8px' }}>Cardápios Personalizados</h4>
+                        <span>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia.
+                        </span>
+                      </InfoText>
+                    </SwiperSlide>
+                  </Swiper>
+                </Info>
+              </InfoWrapper>
+            </FadeIn>
+            }
+          </div>
       </Container >
     </>
   );

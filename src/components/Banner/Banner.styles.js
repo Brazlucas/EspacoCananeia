@@ -54,7 +54,7 @@ export const Info = styled.div`
   position: relative;
   gap: 8%;
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
   display: flex;
   flex-direction: row;
 
@@ -199,21 +199,6 @@ export const BackgroundLines = styled.div`
   top: 0;
   width: 60%;
   height: 65%;
-  position: absolute;
-
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-`;
-
-export const BackgroundSecondLine = styled.div`
-  border-left: 1px solid #E0B246;
-  border-bottom: 1px solid #E0B246;
-  border-bottom-left-radius: 15.0125px;
-  left: 450px;
-  right: 40px;
-  top: 0;
-  height: 85%;
   position: absolute;
 
   @media screen and (max-width: 767px) {

@@ -247,7 +247,6 @@ export const Action = styled.button`
   font-size: 18.7234px;
   line-height: 18px;
   padding: 20px;
-  margin-bottom: 50px;
   margin-top: 50px;
   cursor: pointer;
   &:hover {
