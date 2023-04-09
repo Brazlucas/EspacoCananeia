@@ -40,7 +40,7 @@ export default function Banner() {
 
   return (
     <>
-      <Container>
+      <Container id="banner">
         <Content>
           <DescriptionWrapper>
             <Title>O melhor espaço<br />de Guarulhos!</Title>
@@ -52,7 +52,7 @@ export default function Banner() {
         <Address>
           <AddressSpan><IoLocationSharp style={{ marginRight: '5px' }} />Rua Cananéia, Nº 51 - Guarulhos (SP)</AddressSpan>
         </Address> 
-          <div ref={bannerRef}>
+          <div style={{background: "#000"}} ref={bannerRef}>
             {visible &&
             <FadeIn delay={100}>
               <InfoWrapper>

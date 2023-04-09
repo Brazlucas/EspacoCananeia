@@ -12,11 +12,11 @@ export const Content = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url('images/espaço/fachada.png');
+  background-image: url('images/benefits/12618f05-0f09-41d0-a550-1ac89835afb6.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
-  padding-bottom: 120px;
+  background-position: bottom;
+  padding-bottom: 170px;
   display: flex;
   flex-direction: row;
 

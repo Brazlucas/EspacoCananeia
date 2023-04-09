@@ -63,28 +63,28 @@ export const Items = styled.div`
 `;
 
 export const HeaderItem = styled.div`
-  font-family: Times;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  transition: 0.6s;
-  border-bottom: 2px solid transparent;
-  -webkit-transform:translateY(0px);
-  -moz-transform:translateY(0px);
-  transform:translateY(0px) -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  :hover {
-    -webkit-transform:translateY(-200%);
-    -moz-transform:translateY(-200%);
-    transform:translateY(-20%);
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    transition: 0.6s;
-    border-bottom: 2px solid #E0B246;
+  span {
+    font-family: Times;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  span::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #E0B246;
+    transition: width .3s;
+  }
+
+  span:hover::after {
+    width: 100%;
   }
 `;
 

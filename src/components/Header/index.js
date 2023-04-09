@@ -15,7 +15,6 @@ import { AiOutlineMenu } from 'react-icons/ai'
 
 export default function Header() {
   const [isScroll, setIsScroll] = useState('');
-
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
       setIsScroll('fixed');
@@ -43,7 +42,7 @@ export default function Header() {
               smooth
               offset={-120}
             >
-              O espaço
+              <span>O espaço</span>
             </Link>
           </HeaderItem>
           <HeaderItem className={styles.headerMenuItem}>
@@ -53,7 +52,7 @@ export default function Header() {
               to="benefits"
               smooth
             >
-              Serviços | Galeria
+              <span>Serviços | Galeria</span>
             </Link>
           </HeaderItem>
           <HeaderItem className={styles.headerMenuItem}>
@@ -63,7 +62,7 @@ export default function Header() {
               to="data"
               smooth
             >
-              Decoração
+              <span>Decoração</span>
             </Link>
           </HeaderItem>
           <HeaderItem className={styles.headerMenuItem}>
@@ -73,7 +72,7 @@ export default function Header() {
               to="clients"
               smooth
             >
-              Serviços de Buffet
+              <span>Serviços de Buffet</span>
             </Link>
           </HeaderItem>
           <HeaderItem className={styles.headerMenuItem}>
@@ -84,7 +83,7 @@ export default function Header() {
               smooth
               offset={-80}
             >
-              Cardápios
+              <span>Cardápios</span>
             </Link>
           </HeaderItem>
           <HeaderItem className={styles.headerMenuItem}>
@@ -94,17 +93,16 @@ export default function Header() {
               to="location"
               smooth
             >
-              Localização
+              <span>Localização</span>
             </Link>
-        </HeaderItem>
+          </HeaderItem>
           <HeaderItem className={styles.headerMenuItem}>
             <a 
               href="https://wa.me/5511998992034"
               target="_blank"
               style={{color: '#fff', textDecoration: 'none', fontSize: '18px'}}
             >
-              <span style={{marginRight: '5px'}}>(11) 99899-2034</span>
-            <AiOutlineWhatsApp />
+              <span style={{marginRight: '5px'}}>(11) 99899-2034 <AiOutlineWhatsApp /></span>
             </a>
           </HeaderItem>
         </Items>

@@ -4,6 +4,31 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color: #1c1c1c;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 15px !important;
+  }
+
+  span {
+    font-family: Times;
+    letter-spacing: 0.5px;
+    text-shadow: 0.1px 0.1px 2px #000;
+    font-size: 22px;
+    line-height: 150%;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    max-width: 55vw;
+    margin-top: 10px;
+  }
+`;
+
+export const ContainerBelow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-top: 50px;
   flex-direction: column;
   background-color: #1c1c1c;
