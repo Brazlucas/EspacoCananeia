@@ -12,8 +12,19 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { useEffect, useState } from 'react';
 import { AiFillCalculator, AiOutlineWhatsApp } from 'react-icons/ai'
 import { AiOutlineMenu } from 'react-icons/ai'
+import AlertDialogSlide from '../Dialog/index.js';
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const [isScroll, setIsScroll] = useState('');
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
@@ -29,6 +40,7 @@ export default function Header() {
 
   return (
     <>
+    <AlertDialogSlide />
       <Container className={`${isScroll}`}>
         <a href="https://espacocananeia.com">
           <Logo src="images/logo.png" alt="espaço cananéia"></Logo>
@@ -107,7 +119,10 @@ export default function Header() {
           </HeaderItem>
         </Items>
         <Items>
-          <OutlinedAction className={styles.headerAction, styles.hiddeOnMobile}>
+          <OutlinedAction
+            onClick={handleClickOpen}
+            className={styles.headerAction, styles.hiddeOnMobile}
+          >
             <Link
               style={{color: '#fff', textDecoration: 'none', fontSize: '18px'}}
               to="contact"
