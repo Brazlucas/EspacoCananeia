@@ -33,7 +33,7 @@ export default function ButtonToTop() {
   return (
     <>
       <Link
-        duration={200}
+        duration={300}
         to="banner"
         smooth
         offset={-120}

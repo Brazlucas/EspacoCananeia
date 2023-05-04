@@ -25,6 +25,7 @@
     "react-modal-image": "^2.6.0",
     "react-scripts": "5.0.0",
     "react-scroll": "^1.8.1",
+    "react-scroll-fade-animation": "^0.5.4",
     "rsuite": "^5.28.2",
     "sass": "^1.61.0",
     "styled-components": "^5.3.9",

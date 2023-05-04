@@ -15,16 +15,6 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import AlertDialogSlide from '../Dialog/index.js';
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   const [isScroll, setIsScroll] = useState('');
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
@@ -34,13 +24,25 @@ export default function Header() {
     }
   };
 
+  const [open, setOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
   }, []);
 
   return (
     <>
-    <AlertDialogSlide />
+    <AlertDialogSlide
+      open={open} handleClose={handleCloseModal}
+    />
       <Container className={`${isScroll}`}>
         <a href="https://espacocananeia.com">
           <Logo src="images/logo.png" alt="espaço cananéia"></Logo>
@@ -100,6 +102,7 @@ export default function Header() {
           </HeaderItem>
           <HeaderItem className={styles.headerMenuItem}>
             <Link
+              onClick={handleOpenModal}
               style={{color: '#fff', textDecoration: 'none', fontSize: '18px'}}
               duration={300}
               to="location"
@@ -120,7 +123,6 @@ export default function Header() {
         </Items>
         <Items>
           <OutlinedAction
-            onClick={handleClickOpen}
             className={styles.headerAction, styles.hiddeOnMobile}
           >
             <Link
@@ -135,26 +137,26 @@ export default function Header() {
           </OutlinedAction>
         </Items>
         <Items className={styles.hiddenOnDesktop}>
-        <IconsWrapper>
-          <AiFillCalculator 
-              size={30}
-              style={
-                {
-                  border: '1px solid',
-                  borderColor: '#E0B246',
+          <IconsWrapper>
+            <AiFillCalculator 
+                size={30}
+                style={
+                  {
+                    border: '1px solid',
+                    borderColor: '#E0B246',
+                  }
                 }
-              }
-            />
-            <AiOutlineMenu
-              size={30}
-              style={
-                {
-                  border: '1px solid',
-                  borderColor: '#E0B246',
+              />
+              <AiOutlineMenu
+                size={30}
+                style={
+                  {
+                    border: '1px solid',
+                    borderColor: '#E0B246',
+                  }
                 }
-              }
-            />
-        </IconsWrapper>
+              />
+          </IconsWrapper>
         </Items>
       </Container>
     </>
