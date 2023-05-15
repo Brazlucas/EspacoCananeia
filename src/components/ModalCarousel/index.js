@@ -31,7 +31,7 @@ export default function ModalCarousel() {
 
   return (
     <>
-      <div style={{ marginTop: '60px'}}>
+      <div id="carrossel" style={{ marginTop: '60px'}}>
         <ImageGallery
           ref={imageGalleryRef}
           onClick={toggleFullScreen}

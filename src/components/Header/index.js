@@ -73,23 +73,13 @@ export default function Header() {
             <Link
               style={{color: '#fff', textDecoration: 'none', fontSize: '18px'}}
               duration={300}
-              to="data"
+              to="carrossel"
               smooth
             >
               <span>Decoração</span>
             </Link>
           </HeaderItem>
-          <HeaderItem className={styles.headerMenuItem}>
-            <Link
-              style={{color: '#fff', textDecoration: 'none', fontSize: '18px'}}
-              duration={300}
-              to="clients"
-              smooth
-            >
-              <span>Serviços de Buffet</span>
-            </Link>
-          </HeaderItem>
-          <HeaderItem className={styles.headerMenuItem}>
+          {/* <HeaderItem className={styles.headerMenuItem}>
             <Link
               style={{color: '#fff', textDecoration: 'none', fontSize: '18px'}}
               duration={300}
@@ -99,14 +89,12 @@ export default function Header() {
             >
               <span>Cardápios</span>
             </Link>
-          </HeaderItem>
+          </HeaderItem> */}
           <HeaderItem className={styles.headerMenuItem}>
             <Link
               onClick={handleOpenModal}
+              to='location'
               style={{color: '#fff', textDecoration: 'none', fontSize: '18px'}}
-              duration={300}
-              to="location"
-              smooth
             >
               <span>Localização</span>
             </Link>
@@ -138,15 +126,12 @@ export default function Header() {
         </Items>
         <Items className={styles.hiddenOnDesktop}>
           <IconsWrapper>
-            <AiFillCalculator 
-                size={30}
-                style={
-                  {
-                    border: '1px solid',
-                    borderColor: '#E0B246',
-                  }
-                }
-              />
+            <Link to='form'>
+              <div style={{ background: '#E0B246', alignItems: 'center', padding: '5px', borderRadius: '2px', color: '#000'}}>
+                <span>Orçamento</span>
+              </div>
+            </Link>
+            <Link to=''>
               <AiOutlineMenu
                 size={30}
                 style={
@@ -156,6 +141,7 @@ export default function Header() {
                   }
                 }
               />
+            </Link>
           </IconsWrapper>
         </Items>
       </Container>

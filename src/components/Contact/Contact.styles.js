@@ -16,6 +16,9 @@ export const Container = styled.div`
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 767px) {
+    padding: 20px;
+  }
 `;
 
 export const Title = styled.span`

@@ -75,7 +75,9 @@ export default function Form() {
 
   return (
     <>
+      <div id="form"></div>
       <Container>
+        <h5 style={{ marginBottom: '20px', color: '#fff' }}>Informe seus dados e entraremos em contato!</h5>
         <Forms onSubmit={(e) => { contactSubmit(e) }}>
           <FormItem>
             <Label>Nome</Label>
@@ -111,9 +113,8 @@ export default function Form() {
             />
           </FormItem>
           <FormItem>
-            <Label>Empresa</Label>
+            <Label>Empresa <span style={{ color: 'yellow' }}>(opcional)</span> </Label>
             <TextField
-              required
               type="text"
               id="company"
               name="company"
@@ -125,7 +126,7 @@ export default function Form() {
           {sucess && (<SuccessLabel>E-mail enviado com sucesso!</SuccessLabel>)}
           {errorMessage && (<ErrorLabel>{errorMessage}</ErrorLabel>)}
           <Action type="submit">
-            {loading ? <Loader /> : 'Quero falar com um especialista'}
+            {loading ? <Loader /> : 'Enviar contato'}
           </Action>
         </Forms>
       </Container>

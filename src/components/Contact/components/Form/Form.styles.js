@@ -10,7 +10,7 @@ export const Container = styled.div`
   align-items: center;
 
   @media screen and (max-width: 767px) {
-    padding: 0 !important;
+    padding: 20px !important;
     margin-top: 40px;
   }
 `;

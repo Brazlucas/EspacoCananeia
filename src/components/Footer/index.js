@@ -51,6 +51,9 @@ export default function Footer(){
       <CopyrightRow id="location">
         Copyright © 2023 Espaço Cananeia- Todos os direitos reservados
       </CopyrightRow>
+      <CopyrightRow style={{ fontSize: '11px', color: '#fff5'}}>
+        Desenvolvido por <a style={{color: 'yellow'}} href="https://www.github.com/Brazlucas" target="_blank">Lucas Braz</a>
+      </CopyrightRow>
     </>
   );
 };

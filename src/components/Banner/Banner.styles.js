@@ -104,6 +104,9 @@ export const AddressSpan = styled.span`
   font-size: 25px;
   margin: 0 auto;
   color: #fff;
+  @media screen and (max-width: 767px) {
+    padding: 35px;
+  }
 `;
 
 export const DescriptionWrapper = styled.div`

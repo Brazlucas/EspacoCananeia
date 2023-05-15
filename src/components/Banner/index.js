@@ -16,28 +16,11 @@ import { IoLocationSharp } from 'react-icons/io5'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, FreeMode } from "swiper";
 import 'swiper/css';
-import FadeIn from 'react-fade-in';
-import { useState, useEffect } from "react";
-import { useRef } from "react";
+import styles from '../../styles/Home.module.css';
 
 SwiperCore.use([Autoplay, FreeMode]);
 
 export default function Banner() {
-  const [visible, setVisible] = useState(false);
-  const bannerRef = useRef(null);
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (bannerRef.current) {
-        const top = bannerRef.current.getBoundingClientRect().top;
-        const isVisible = (top + 100) < window.innerHeight;
-        setVisible(isVisible);
-      }
-    };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
     <>
       <Container id="banner">
@@ -45,70 +28,68 @@ export default function Banner() {
           <DescriptionWrapper>
             <Title>O melhor espaço<br />de Guarulhos!</Title>
             <Blink>
-              <Action>Saiba mais!</Action>
+              <a target="_blank" href="https://www.instagram.com/espacocananeia/">
+                <Action>Saiba mais!</Action>
+              </a>
             </Blink>
           </DescriptionWrapper>
         </Content>
         <Address>
           <AddressSpan><IoLocationSharp style={{ marginRight: '5px' }} />Rua Cananéia, Nº 51 - Guarulhos (SP)</AddressSpan>
         </Address> 
-          <div style={{background: "#000"}} ref={bannerRef}>
-            {visible &&
-            <FadeIn delay={100}>
-              <InfoWrapper>
-                <Info>
-                  <Swiper
-                    spaceBetween={50}
-                    slidesPerView={3}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    freeMode={true}
-                    loopMode={true}
-                    autoplay={{
-                      pauseOnMouseEnter: false,
-                      delay: 1800,
-                      disableOnInteraction: false,
-                    }}
-                  >
-                    <SwiperSlide>
-                      <InfoText>
-                        <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon3.png"></img>
-                        <h4>Localização Privilegiada</h4>
-                        <span>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia obcaecat
-                        </span>
-                      </InfoText>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <InfoText>
-                        <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon1.png"></img>
-                        <h4 style={{ marginBottom: '8px' }}>Decoração Elegante</h4>
-                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat</span>
-                      </InfoText>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <InfoText>
-                        <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon2.png"></img>
-                        <h4 style={{ marginBottom: '8px' }}>Gastronomia Sofisticada</h4>
-                        <span>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia.
-                        </span>
-                      </InfoText>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <InfoText>
-                        <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon4.png"></img>
-                        <h4 style={{ marginBottom: '8px' }}>Cardápios Personalizados</h4>
-                        <span>
-                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at, placeat officia.
-                        </span>
-                      </InfoText>
-                    </SwiperSlide>
-                  </Swiper>
-                </Info>
-              </InfoWrapper>
-            </FadeIn>
-            }
+          <div style={{background: "#000"}}>
+            <InfoWrapper className={styles.hiddeOnMobile}>
+              <Info>
+                <Swiper
+                  spaceBetween={50}
+                  slidesPerView={3}
+                  onSlideChange={() => console.log('slide change')}
+                  onSwiper={(swiper) => console.log(swiper)}
+                  freeMode={true}
+                  loopMode={true}
+                  autoplay={{
+                    pauseOnMouseEnter: false,
+                    delay: 1800,
+                    disableOnInteraction: false,
+                  }}
+                >
+                  <SwiperSlide>
+                    <InfoText>
+                      <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon3.png"></img>
+                      <h4>Localização Privilegiada</h4>
+                      <span>
+                        Buffet Glamouroso localizado no coração de Guarulhos
+                      </span>
+                    </InfoText>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <InfoText>
+                      <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon1.png"></img>
+                      <h4 style={{ marginBottom: '8px' }}>Decoração Elegante</h4>
+                      <span>Espaço luxuoso e climatizado, Decorado para cerimônia, Decoração permanente, Som e iluminação, Jardim</span>
+                    </InfoText>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <InfoText>
+                      <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon2.png"></img>
+                      <h4 style={{ marginBottom: '8px' }}>Gastronomia Sofisticada</h4>
+                      <span>
+                        Chefe de cozinha, Garçons e Copeiros
+                      </span>
+                    </InfoText>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <InfoText>
+                      <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon4.png"></img>
+                      <h4 style={{ marginBottom: '8px' }}>Cardápios Personalizados</h4>
+                      <span>
+                        Cardápio com gastronomia de alto padrão
+                      </span>
+                    </InfoText>
+                  </SwiperSlide>
+                </Swiper>
+              </Info>
+            </InfoWrapper>
           </div>
       </Container >
     </>

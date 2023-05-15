@@ -1,7 +1,5 @@
 import Form from "./components/Form";
 import {
-  BackgroundLines,
-  BackgroundLinesDown,
   Container,
   Description,
   TextWrapper,
@@ -12,11 +10,27 @@ export default function Contact() {
   return (
     <>
       <Container id="contact">
-        <BackgroundLines />
-        <BackgroundLinesDown />
         <TextWrapper>
           <Title>Leve sua festa para o Espaço Cananeia</Title>
-          <Description>Fale com nossos especialistas para saber mais como podemos te ajudar e qual o melhor plano para a sua empresa!  </Description>
+          <Description>Fale com um de nossos atendentes... </Description>
+        <div style={{ display: 'flex', gap: '15px' }}>
+          <a href="https://www.instagram.com/espacocananeia/" target="_blank">
+            <img
+              style={{ marginTop: '20px', background: '#E0B246', padding: '20px' }}
+              width="80px"
+              height="80px"
+              src="https://cdn-icons-png.flaticon.com/512/87/87390.png"
+            ></img>
+          </a>
+          <a href="https://wa.me/5511998992034" target="_blank">
+            <img
+              style={{ marginTop: '20px', background: '#E0B246', padding: '20px' }}
+              width="80px"
+              height="80px"
+              src="https://cdn-icons-png.flaticon.com/512/152/152740.png"
+            ></img>
+          </a>
+        </div>
         </TextWrapper>
         <Form />
       </Container>
