@@ -93,3 +93,7 @@ export const OutlinedAction = styled.div`
     opacity: 0.6;
   }
 `;
+
+export const Carousel = styled.div`
+  width: 100%;
+`

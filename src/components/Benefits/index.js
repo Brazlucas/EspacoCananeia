@@ -11,10 +11,12 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ModalCarousel from "../ModalCarousel";
 import itemData from "./photosData";
-import styles from '../../styles/Home.module.css';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Benefits() {
   const items = itemData();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   return (
     <>
       <Container id="benefits">
@@ -32,15 +34,17 @@ export default function Benefits() {
             Espaço luxuoso - Decorado para cerimônia - Cardápio de alta gastronomia - Decoração permanente - DJ, Som e Iluminação - 
             Jardim - Chefe de cozinha - Garçons - Segurança.
           </Description>
-          <Wrapper>
             <ImageList
-              className={styles.hiddeOnMobile}
               sx={{ width: '100%', height: '100%', marginBottom: '65px' }} cols={3}
             >
               {items.map((item) => (
-                <ImageListItem style={{ margin: '8px', marginBottom: '15px', border: 'solid 2px #EDBC40' }} key={item.img}>
+                <ImageListItem 
+                  style={{ margin: '8px', marginBottom: '10px', border: 'solid 2px #EDBC40', height: '350px' }}
+                  key={item.img}
+                  cols={isMobile ? 3 : 1}
+                >
                   <img
-                    style={{ maxHeight: '350px', maxWidth: '100%' }}
+                    style={{ maxWidth: '100%', maxHeight: '346px' }}
                     src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                     srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                     alt={item.title}
@@ -49,8 +53,7 @@ export default function Benefits() {
                 </ImageListItem>
               ))}
             </ImageList>
-            <ModalCarousel />
-          </Wrapper>
+          <ModalCarousel />
         </SectionWrapper>
       </Container>
     </>

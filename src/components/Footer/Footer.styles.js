@@ -60,6 +60,9 @@ export const MenuItem = styled.span`
   &:hover {
     opacity: 0.6;
   }
+  a {
+    color: #FFFFFF;
+  }
 `;
 
 export const EmailLabel = styled.div`

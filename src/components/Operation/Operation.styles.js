@@ -98,7 +98,7 @@ export const SectionTitle = styled.h1`
   color: #fff;
 
   @media screen and (max-width: 767px) {
-    padding: 0 30px;
+    padding-bottom: 5px;
   }
 `;
 
@@ -109,14 +109,14 @@ export const Description = styled.div`
   text-shadow: 0.1px 0.1px 10px #000;
   font-size: 22px;
   line-height: 150%;
-  text-align: justify;
+  text-align: center;
   color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   max-width: 55vw;
   margin-top: 10px;
   @media screen and (max-width: 767px) {
     max-width: 100vw;
-    padding: 0px !important;
+    padding: 15px 0px 0px 0px !important;
     font-size: 1.1rem;
   }
 `;

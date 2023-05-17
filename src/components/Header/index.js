@@ -10,7 +10,7 @@ import {
 import styles from '../../styles/Home.module.css';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useEffect, useState } from 'react';
-import { AiFillCalculator, AiOutlineWhatsApp } from 'react-icons/ai'
+import { AiOutlineWhatsApp } from 'react-icons/ai'
 import { AiOutlineMenu } from 'react-icons/ai'
 import AlertDialogSlide from '../Dialog/index.js';
 
@@ -136,8 +136,7 @@ export default function Header() {
                 size={30}
                 style={
                   {
-                    border: '1px solid',
-                    borderColor: '#E0B246',
+                    color: '#E0B246'
                   }
                 }
               />

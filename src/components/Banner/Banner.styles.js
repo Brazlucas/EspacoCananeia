@@ -43,7 +43,8 @@ export const InfoWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
-  background: linear-gradient(#1C1C1C, #000);
+  background: rgb(5,5,5);
+  background: linear-gradient(90deg, rgba(5,5,5,1) 0%, rgba(32,32,32,1) 35%, rgba(3,3,3,1) 100%);
 
   @media screen and (max-width: 767px) {
     padding: 15px;
@@ -59,10 +60,6 @@ export const Info = styled.div`
   flex-direction: row;
 
   @media screen and (max-width: 767px) {
-    gap: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 100%;
   }
 `;
@@ -76,6 +73,15 @@ export const InfoText = styled.div`
   margin: 0 auto;
   color: #fff;
   font-family: Times;
+
+  @media screen and (max-width: 767px) {
+    padding: 10px 0px 10px 0px;
+    line-height: normal;
+    letter-spacing: normal;
+    h4 {
+      font-size: 1.1rem !important;
+    }
+  }
 
   span {
     color: rgba(255, 255, 255, 0.7);

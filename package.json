@@ -23,6 +23,7 @@
     "react-icons": "^4.8.0",
     "react-image-gallery": "^1.2.11",
     "react-modal-image": "^2.6.0",
+    "react-responsive": "^9.0.2",
     "react-scripts": "5.0.0",
     "react-scroll": "^1.8.1",
     "react-scroll-fade-animation": "^0.5.4",

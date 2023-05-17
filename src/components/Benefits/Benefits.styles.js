@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
 export const SectionWrapper = styled.div`
   padding: 120px 200px;
   opacity: 90%;
-  background-color: black;
+  background-color: #0005;
   text-align: center;
   width: 100%;
   @media screen and (max-width: 767px) {
@@ -41,30 +41,33 @@ export const Description = styled.div`
   text-shadow: 0.1px 0.1px 10px #000;
   font-size: 22px;
   line-height: 150%;
-  text-align: justify;
+  text-align: center;
   color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   max-width: 87%;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   @media screen and (max-width: 767px) {
     max-width: 100vw;
-    padding: 0px !important;
+    padding: 10px 0px 0px 0px !important;
     font-size: 1.1rem;
   }
 `;
 
 export const TitleWrapper = styled.div`
+  text-shadow: 1px 1px 10px #000;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  color: #fff;
   
   h1 {
     color: #fff;
   }
 
   @media screen and (max-width: 767px) {
-   margin-bottom: 50px;
+    padding-bottom: 5px;
   }
 `;
 

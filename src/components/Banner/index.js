@@ -17,10 +17,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, FreeMode } from "swiper";
 import 'swiper/css';
 import styles from '../../styles/Home.module.css';
+import { useMediaQuery } from 'react-responsive';
 
 SwiperCore.use([Autoplay, FreeMode]);
 
 export default function Banner() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   return (
     <>
       <Container id="banner">
@@ -37,8 +40,8 @@ export default function Banner() {
         <Address>
           <AddressSpan><IoLocationSharp style={{ marginRight: '5px' }} />Rua Cananéia, Nº 51 - Guarulhos (SP)</AddressSpan>
         </Address> 
-          <div style={{background: "#000"}}>
-            <InfoWrapper className={styles.hiddeOnMobile}>
+          <div style={{ background: "#000" }}>
+            <InfoWrapper>
               <Info>
                 <Swiper
                   spaceBetween={50}
@@ -52,12 +55,13 @@ export default function Banner() {
                     delay: 1800,
                     disableOnInteraction: false,
                   }}
+                  aria-colspan={isMobile ? 3 : 1}
                 >
                   <SwiperSlide>
                     <InfoText>
                       <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon3.png"></img>
                       <h4>Localização Privilegiada</h4>
-                      <span>
+                      <span className={styles.hiddeOnMobile}>
                         Buffet Glamouroso localizado no coração de Guarulhos
                       </span>
                     </InfoText>
@@ -66,14 +70,18 @@ export default function Banner() {
                     <InfoText>
                       <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon1.png"></img>
                       <h4 style={{ marginBottom: '8px' }}>Decoração Elegante</h4>
-                      <span>Espaço luxuoso e climatizado, Decorado para cerimônia, Decoração permanente, Som e iluminação, Jardim</span>
+                      <span
+                        className={styles.hiddeOnMobile}
+                      >
+                        Espaço luxuoso e climatizado, Decorado para cerimônia, Decoração permanente, Som e iluminação, Jardim
+                      </span>
                     </InfoText>
                   </SwiperSlide>
                   <SwiperSlide>
                     <InfoText>
                       <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon2.png"></img>
                       <h4 style={{ marginBottom: '8px' }}>Gastronomia Sofisticada</h4>
-                      <span>
+                      <span className={styles.hiddeOnMobile}>
                         Chefe de cozinha, Garçons e Copeiros
                       </span>
                     </InfoText>
@@ -82,7 +90,7 @@ export default function Banner() {
                     <InfoText>
                       <img style={{ width: '80px', height: '80px', marginBottom: '20px' }} src="images/icon4.png"></img>
                       <h4 style={{ marginBottom: '8px' }}>Cardápios Personalizados</h4>
-                      <span>
+                      <span className={styles.hiddeOnMobile}>
                         Cardápio com gastronomia de alto padrão
                       </span>
                     </InfoText>

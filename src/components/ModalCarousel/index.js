@@ -3,11 +3,14 @@ import itemData from './photosData';
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import React from 'react';
 import { useRef, useState, useEffect } from 'react';
+import { Carousel } from './Carousel.styles';
+import { useMediaQuery } from 'react-responsive';
 
 export default function ModalCarousel() {
   const items = itemData();
   const [showFullscreenButton, setShowFullscreenButton] = useState(false);
   const imageGalleryRef = useRef(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const toggleFullScreen = () => {
     return imageGalleryRef.current.fullScreen();
@@ -31,23 +34,22 @@ export default function ModalCarousel() {
 
   return (
     <>
-      <div id="carrossel" style={{ marginTop: '60px'}}>
+      <Carousel id="carrossel" style={{ marginTop: '50px' }}>
         <ImageGallery
           ref={imageGalleryRef}
           onClick={toggleFullScreen}
-          style={{ width: '50%', height: '50%' }}
           tHeight={items.thumbnailHeight}
-          showBullets={true}
           infinite={true}
           autoPlay={true}
           showPlayButton={false}
           showFullscreenButton={showFullscreenButton}
           slideDuration={800}
           slideInterval={5000}
-          items={items}
-          thumbnailPosition='left'
+          items={ isMobile ? items.itemMobileHeight : items.itemDesktopHeight }
+          showThumbnails={ isMobile ? false : true }
+          originalHeight={5}
         />
-      </div>
+      </Carousel>
     </>
   );
 }

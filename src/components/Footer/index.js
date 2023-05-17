@@ -25,10 +25,9 @@ export default function Footer(){
           <Logo src="images/logo.png" />
         </LogoWrapper>
         <Column>
-          <MenuItem>Como funciona?</MenuItem>
-          <MenuItem>Benefícios</MenuItem>
-          <MenuItem>Quem somos nós?</MenuItem>
-          <MenuItem>Clientes</MenuItem>
+          <MenuItem><a href="https://www.instagram.com/espacocananeia/" target="_blank">Como funciona?</a></MenuItem>
+          <MenuItem><a href="https://www.instagram.com/espacocananeia/" target="_blank">Quem somos nós?</a></MenuItem>
+          <MenuItem><a href="https://www.instagram.com/espacocananeia/" target="_blank">Clientes</a></MenuItem>
         </Column>
         <div>
           <AddressTitle>Onde estamos</AddressTitle>
@@ -43,8 +42,9 @@ export default function Footer(){
         </div>
         <div>
           <EmailLabel>Fale com a gente</EmailLabel>
-          <Email>contato@espacocananeia.com</Email>
+          <Email>espacocananeiaoficial@gmail.com</Email>
           <Telefone>(11) 99899-2034</Telefone>
+          <Telefone>(11) 96722-0550</Telefone>
         </div>
       </Container>
       <div dangerouslySetInnerHTML={ {__html:  iframe?iframe:""}} />

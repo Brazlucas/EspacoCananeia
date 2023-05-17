@@ -12,7 +12,8 @@ export const Container = styled.div`
   -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
   z-index: 9999;
-  background-color: #000;
+  background: rgb(5,5,5);
+  background: linear-gradient(90deg, rgba(5,5,5,1) 0%, rgba(32,32,32,1) 35%, rgba(3,3,3,1) 100%);
 
   -webkit-transition: all 0.5s ease;
   -moz-transition: position 10s;
