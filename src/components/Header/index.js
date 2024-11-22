@@ -45,7 +45,7 @@ export default function Header() {
     />
       <Container className={`${isScroll}`}>
         <a href="https://espacocananeia.com">
-          <Logo src="images/logo.png" alt="espaço cananéia"></Logo>
+          <Logo src="images/logo.png" alt="espaco cananéia"></Logo>
         </a>
         <Items className={styles.hiddeOnMobile}>
           <HeaderItem className={styles.headerMenuItem}>

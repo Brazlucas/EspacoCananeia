@@ -62,7 +62,7 @@ export const DivisorWrapper = styled.div`
 export const SectionWrapper = styled.div`
   padding: 200px;
   opacity: 90%;
-  background-image: url('images/espaço/noivos.png');
+  background-image: url('images/espaco/noivos.png');
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;

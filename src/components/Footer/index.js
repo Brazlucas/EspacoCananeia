@@ -44,7 +44,6 @@ export default function Footer(){
           <EmailLabel>Fale com a gente</EmailLabel>
           <Email>espacocananeiaoficial@gmail.com</Email>
           <Telefone>(11) 99899-2034</Telefone>
-          <Telefone>(11) 96722-0550</Telefone>
         </div>
       </Container>
       <div dangerouslySetInnerHTML={ {__html:  iframe?iframe:""}} />
